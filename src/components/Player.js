@@ -10,15 +10,9 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
   const audioRef = useRef(null);
   // Event Handler
   const playSongHandler = () => {
-    audioRef.current.play();
+    isPlaying ? audioRef.current.pause() : audioRef.current.play();
     setIsPlaying(!isPlaying);
-    if(isPlaying) {
-      audioRef.current.pause();
-    }else {
-      audioRef.current.play();
-      setIsPlaying(!isPlaying);
-    }
-  }
+  };
 
   return (
     <div className="player">
