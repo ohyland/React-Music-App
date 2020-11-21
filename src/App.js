@@ -1,5 +1,8 @@
 import React from "react";
 
+// third party
+import "./styles/app.scss";
+
 // import components
 import Player from "./components/Player";
 import Song from "./components/Song";
