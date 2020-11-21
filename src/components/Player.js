@@ -13,8 +13,13 @@ const Player = () => {
         <p>Start time</p>
         <input type="range"/>
         <p>End time</p>
-        <div  className="play-control"><ArrowLeftIcon/><PlayArrowIcon /><ArrowRightIcon/></div>
-      </div>
+        </div>
+        <div className="play-control" >
+          <ArrowLeftIcon/>
+          <PlayArrowIcon />
+          <ArrowRightIcon/>
+          </div>
+
     </div>
   );
 }
