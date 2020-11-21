@@ -5,13 +5,14 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 
-const Player = ({ currentSong }) => {
+const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
   // Ref
   const audioRef = useRef(null);
   // Event Handler
   const playSongHandler = () => {
-    console.log(audioRef)
-  }
+    isPlaying ? audioRef.current.pause() : audioRef.current.play();
+    setIsPlaying(!isPlaying);
+  };
 
   return (
     <div className="player">
