@@ -1,6 +1,6 @@
 import React from "react";
 
-const Song = ({currentSong}) => {
+const Song = ({ currentSong }) => {
   return (
     <div className="song-container">
       <img src={currentSong.cover} />
@@ -8,6 +8,6 @@ const Song = ({currentSong}) => {
       <h2>{currentSong.name}</h2>
     </div>
   );
-}
+};
 
 export default Song;
