@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
-// import { duration } from "@material-ui/core";
+import PauseIcon from "@material-ui/icons/Pause";
 
 const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
   // Ref
@@ -49,7 +49,11 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
       </div>
       <div className="play-control">
         <ArrowLeftIcon />
-        <PlayArrowIcon onClick={playSongHandler} />
+        {isPlaying ? (
+          <PlayArrowIcon onClick={playSongHandler} />
+        ) : (
+          <PauseIcon onClick={playSongHandler} />
+        )}
         <ArrowRightIcon />
       </div>
       <audio
