@@ -1,0 +1,36 @@
+.library {
+  position: fixed;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.671);
+  box-shadow: 2px 2px 50px rgb(230, 222, 222);
+  h2 {
+    padding: 2rem;
+  }
+}
+
+.library-song {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem 1rem 2rem;
+  cursor: pointer;
+  img {
+    width: 30%;
+  }
+  &:hover {
+    background-color: rgba(235, 212, 255, 0.639);
+  }
+}
+
+.song-description {
+  padding-left: 1rem;
+  h3 {
+    font-size: 1rem;
+  }
+  h4 {
+    font-size: 0.75rem;
+  }
+}
