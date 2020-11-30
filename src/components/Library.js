@@ -11,8 +11,11 @@ const Library = ({ songs, setCurrentSong, audioRef, isPlaying }) => {
             song={song}
             setCurrentSong={setCurrentSong}
             songs={songs}
-            id={song.id}
+            cover={song.cover}
+            name={song.name}
+            artist={song.artist}
             key={song.id}
+            id={song.id}
             audioRef={audioRef}
             isPlaying={isPlaying}
           />

@@ -7,12 +7,11 @@ import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import PauseIcon from "@material-ui/icons/Pause";
 
 const Player = ({
-  currentSong,
   isPlaying,
   setIsPlaying,
   audioRef,
-  setSongInfo,
   songInfo,
+  setSongInfo,
 }) => {
   // Events
   const playSongHandler = () => {
@@ -38,7 +37,7 @@ const Player = ({
         <input
           onChange={dragHandler}
           min={0}
-          max={songInfo.duration}
+          max={songInfo.duration || 0}
           value={songInfo.currentTime}
           type="range"
         />
