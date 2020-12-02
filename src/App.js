@@ -48,6 +48,7 @@ const App = () => {
         setCurrentSong={setCurrentSong}
         audioRef={audioRef}
         isPlaying={isPlaying}
+        setSongs={setSongs}
       />
       <audio
         onTimeUpdate={updateTimeHandler}
