@@ -46,9 +46,9 @@ const Player = ({
       <div className="play-control">
         <ArrowLeftIcon />
         {isPlaying ? (
-          <PlayArrowIcon onClick={playSongHandler} />
-        ) : (
           <PauseIcon onClick={playSongHandler} />
+        ) : (
+          <PlayArrowIcon onClick={playSongHandler} />
         )}
         <ArrowRightIcon />
       </div>
