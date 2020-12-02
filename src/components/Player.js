@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 // Material UI
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
@@ -31,7 +31,6 @@ const Player = ({
 
   return (
     <div className="player">
-      <h2>Player</h2>
       <div className="time-control">
         <p>{getTime(songInfo.currentTime)}</p>
         <input
