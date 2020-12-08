@@ -12,6 +12,9 @@ const Player = ({
   audioRef,
   songInfo,
   setSongInfo,
+  songs,
+  setCurrentSong,
+  currentSong,
 }) => {
   // Events
   const playSongHandler = () => {
@@ -28,7 +31,20 @@ const Player = ({
     audioRef.current.currentTime = e.target.value;
     setSongInfo({ ...songInfo, currentTime: e.target.value });
   };
-
+  //skip forward and backwards
+  const skipTrackHandler = (direction) => {
+    let currentIndex = songs.findIndex((song) => song.id === currentSong.id); //index of current song
+    if (direction === "skip-forward") {
+      setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+    }
+    if (direction === "skip-back") {
+      if ((currentIndex - 1) % songs.length === -1) {
+        setCurrentSong(songs[songs.length - 1]);
+        return;
+      }
+      setCurrentSong(songs[(currentIndex - 1) % songs.length]);
+    }
+  };
   return (
     <div className="player">
       <h2>Player</h2>
@@ -44,13 +60,13 @@ const Player = ({
         <p>{getTime(songInfo.duration)}</p>
       </div>
       <div className="play-control">
-        <ArrowLeftIcon />
+        <ArrowLeftIcon onClick={() => skipTrackHandler("skip-back")} />
         {isPlaying ? (
           <PauseIcon onClick={playSongHandler} />
         ) : (
           <PlayArrowIcon onClick={playSongHandler} />
         )}
-        <ArrowRightIcon />
+        <ArrowRightIcon onClick={() => skipTrackHandler("skip-forward")} />
       </div>
     </div>
   );
